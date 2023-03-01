@@ -14,8 +14,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="h-screen flex flex-col justify-end gap-32 py-32 transition-all">
-      <div data-aos="fade-up" className="text-[180px] font-medium w-full text">
+    <div className="h-screen flex flex-col justify-end gap-32 py-32 px-10 xl:px-0">
+      <div
+        data-aos="fade-up"
+        className="xl:text-[180px] md:text-[135px] text-[80px] font-medium w-full text"
+      >
         <p className="m-0 text-center uppercase">Galaxy</p>
         <p
           data-aos="fade-up"
@@ -28,7 +31,10 @@ const Hero = () => {
           <CgArrowLongDown className="m-auto text-2xl mt-4" />
         </Link>
       </div>
-      <p data-aos="fade-left" className="text-4xl font-medium">
+      <p
+        data-aos="fade-left"
+        className="xl:text-[36px] md:text-[30px] text-[24px] font-medium"
+      >
         Zero-Loss future <br /> through Lifestyle engineering
       </p>
     </div>

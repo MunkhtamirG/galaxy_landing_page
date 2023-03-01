@@ -63,7 +63,12 @@ function Stars() {
     render();
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed left-0 top-0 -z-10" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed left-0 top-0 -z-10 w-full h-screen"
+    />
+  );
 }
 
 export default Stars;

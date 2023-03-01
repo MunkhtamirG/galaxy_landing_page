@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { CgMenuGridR } from "react-icons/cg";
 
 const Navbar = () => {
   useEffect(() => {
@@ -10,12 +11,12 @@ const Navbar = () => {
   return (
     <div
       data-aos="fade-down"
-      className="flex justify-between m-auto items-center py-10 fixed max-w-[1280px] w-full z-10"
+      className="flex justify-between m-auto items-center py-10 fixed max-w-[1280px] w-full z-10 px-10 xl:px-0"
     >
       <Link href={"/"} className="text-3xl font-medium">
         Galaxy
       </Link>
-      <ul className="flex gap-10">
+      <ul className="md:flex gap-10 hidden">
         <li>
           <Link href={"#career"} className="uppercase">
             career
@@ -32,6 +33,9 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <div className="md:hidden block text-3xl">
+        <CgMenuGridR />
+      </div>
     </div>
   );
 };
