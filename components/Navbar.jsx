@@ -1,17 +1,21 @@
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { CgMenuGridR } from "react-icons/cg";
+import RightMenu from "./RightMenu";
 
 const Navbar = () => {
+  const [openRightMenu, setOpenRightMenu] = useState(false);
+
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <div
       data-aos="fade-down"
-      className="flex justify-between m-auto items-center py-10 fixed max-w-[1280px] w-full z-10 px-10 xl:px-0"
+      className="flex justify-between m-auto items-center py-10 fixed max-w-[1280px] w-full z-20 px-10 xl:px-0"
     >
       <Link href={"/"} className="text-3xl font-medium">
         Galaxy
@@ -34,8 +38,11 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="md:hidden block text-3xl">
-        <CgMenuGridR />
+        <button onClick={() => setOpenRightMenu(!openRightMenu)}>
+          <CgMenuGridR />
+        </button>
       </div>
+      {openRightMenu ? <RightMenu setOpenRightMenu={setOpenRightMenu} /> : null}
     </div>
   );
 };
