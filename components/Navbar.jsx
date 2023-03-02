@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { CgMenuGridR } from "react-icons/cg";
 import RightMenu from "./RightMenu";
+import Head from "next/head";
 
 const Navbar = () => {
   const [openRightMenu, setOpenRightMenu] = useState(false);
@@ -17,6 +18,10 @@ const Navbar = () => {
       data-aos="fade-down"
       className="flex justify-between m-auto items-center py-10 fixed max-w-[1280px] w-full z-20 px-10 xl:px-0"
     >
+      <Head>
+        <title>Galaxy</title>
+        <link rel="icon" href="black-hole.png" />
+      </Head>
       <Link href={"/"} className="text-3xl font-medium">
         Galaxy
       </Link>
